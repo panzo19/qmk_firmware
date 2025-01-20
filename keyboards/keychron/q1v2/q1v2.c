@@ -75,3 +75,10 @@ bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
 }
 
 #endif
+
+void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+    led_t led_state = host_keyboard_led_state();
+    if (led_state.caps_lock) {
+        rgb_matrix_set_color(45, RGB_GREEN);
+    }
+}
